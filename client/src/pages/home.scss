@@ -1,0 +1,92 @@
+.home_box {
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.home_section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .home_div {
+    height: 100vh;
+
+    padding: 2rem 15rem;
+    // background-image: url(../assets//img/house.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-blend-mode: soft-light;
+    div {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 2rem;
+      h1 {
+        font-size: 5rem;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.home_sec_div {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    padding-bottom: 3rem;
+    font-size: 2rem;
+  }
+
+  .gg {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .home_box {
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+.card_img {
+  img {
+    border-radius: 5px;
+  }
+}
+
+.cardtitle_div {
+  display: flex;
+  p {
+    font-weight: bold;
+  }
+}
+.price_div {
+  display: flex;
+  p {
+    font-weight: bold;
+  }
+}

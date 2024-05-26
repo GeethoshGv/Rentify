@@ -1,5 +1,7 @@
 i created using MERN stack  
 
+deployed on render  https://rentify-mckf.onrender.com 
+
 dependencies i use 
 
     *} jsonwebtoken
@@ -13,10 +15,19 @@ dependencies i use
     *} firebase
     *} redux-persist
     *} sass
+    *} react router
 
     *} first open the folder in the vs or any code editor then get to the client then enter npm install same for the server file
 
     *} to run the client  first cd to client then enter npm run dev in the terminal it connect to http://localhost:5173
 
    *}then to run server cd server then enter npm run dev it connect to http://localhost:3000
+
+created function 
+
+   login 
+   register   
+   both the buyer and seller can create the rental property 
+   the buyer can contact the seller
+   created the rental property can be updated and deleted in profile page after the login  
 

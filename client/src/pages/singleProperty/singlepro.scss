@@ -191,3 +191,28 @@
     color: white;
   }
 }
+
+.single_login_div {
+  display: flex;
+  // width: 100%;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  gap: 2rem;
+  h6 {
+    // width: 300px;
+    font-size: 0.88rem;
+  }
+  a {
+    padding-left: 1rem;
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    span {
+      font-weight: bold;
+    }
+  }
+}

@@ -121,7 +121,7 @@ const SingleProperty = () => {
               <div className="three_center_div">
                 <div className="im_iintrested_div">
                   <div className="in_button">
-                    {currentUser && (
+                    {currentUser ? (
                       <div>
                         <button
                           className="im"
@@ -129,6 +129,13 @@ const SingleProperty = () => {
                         >
                           <h3>I'm interested</h3>
                         </button>
+                      </div>
+                    ) : (
+                      <div className="single_login_div">
+                        <h6>
+                          login to contact seller :
+                          <Link to={"/login"}>Login</Link>
+                        </h6>
                       </div>
                     )}
                   </div>

@@ -1,7 +1,8 @@
-import house from "../assets/img/house.jpg";
 import { useEffect, useState } from "react";
 import "./home.scss";
 import { Link } from "react-router-dom";
+import house from "../assets/img/house.jpg";
+import down from "../assets/img/down.png";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -23,8 +24,8 @@ const Home = () => {
   return (
     <section className="home_section">
       <div className="home_div">
-        <div>
-          <h1>Rentify</h1>
+        <div className="home_text_div">
+          <h1>Rentify.</h1>
           <p>
             Your one stop shop for all your mortgage and sales needs. Whether
             you’re looking to find the perfect place to call home or you’re
@@ -32,7 +33,17 @@ const Home = () => {
             wide range of properties to rent or buy.
           </p>
         </div>
+        <div className="home_img_div">
+          <img src={house} alt="" />
+        </div>
+        <div className="view_pro_svg">
+          <div className="svg_center_div">
+            <p>View Property </p>
+            <img src={down} alt="" />
+          </div>
+        </div>
       </div>
+
       <div className="home_sec_div">
         <h2>View property</h2>
         <div className="gg">
@@ -51,7 +62,7 @@ const Home = () => {
                     </div>
                     <div className="price_div">
                       <p>price :</p>
-                      <p>{item.price}</p>
+                      <span>{item.price}</span>
                     </div>
                   </div>
                 </Link>

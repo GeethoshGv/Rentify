@@ -47,6 +47,10 @@ const listingSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    sellerEmail: {
+        type: String,
+        required: true,
+    },
 
     userData: {
         type: String,

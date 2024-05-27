@@ -28,6 +28,7 @@ const Property = () => {
     college: 1,
     hospitals: 1,
     contactNumber: 123,
+    sellerEmail: "",
 
     price: 50,
   });
@@ -106,6 +107,7 @@ const Property = () => {
     if (
       e.target.type === "number" ||
       e.target.type === "text" ||
+      e.target.type === "email" ||
       e.target.type === "textarea"
     ) {
       setFormData({
@@ -141,7 +143,8 @@ const Property = () => {
       if (data.success === false) {
         setError(data.message);
       }
-      navigate(`/listing/${data._id}`);
+      // navigate(`/listing/${data._id}`);
+      navigate(`/singleProperty/${data._id}`);
     } catch (error) {
       setError(error.message);
       setLoading(false);
@@ -285,6 +288,15 @@ const Property = () => {
                   id="contactNumber"
                   onChange={handleChange}
                   value={formData.contactNumber}
+                />
+              </div>
+              <div className="phonenumber_div">
+                <span>seller email :</span>
+                <input
+                  type="email"
+                  id="sellerEmail"
+                  onChange={handleChange}
+                  value={formData.sellerEmail}
                 />
               </div>
               <div className="phonenumber_div">

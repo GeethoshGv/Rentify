@@ -29,6 +29,7 @@ const UpdateProperty = () => {
     college: 1,
     hospitals: 1,
     contactNumber: 123,
+    sellerEmail: "",
 
     price: 50,
   });
@@ -123,6 +124,7 @@ const UpdateProperty = () => {
     if (
       e.target.type === "number" ||
       e.target.type === "text" ||
+      e.target.type === "email" ||
       e.target.type === "textarea"
     ) {
       setFormData({
@@ -302,6 +304,15 @@ const UpdateProperty = () => {
                   id="contactNumber"
                   onChange={handleChange}
                   value={formData.contactNumber}
+                />
+              </div>
+              <div className="phonenumber_div">
+                <span>seller email :</span>
+                <input
+                  type="email"
+                  id="sellerEmail"
+                  onChange={handleChange}
+                  value={formData.sellerEmail}
                 />
               </div>
               <div className="phonenumber_div">

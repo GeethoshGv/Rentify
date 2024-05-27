@@ -9,27 +9,69 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-image: url(../assets/svg/homesvg.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   .home_div {
+    overflow: hidden;
     height: 100vh;
+    padding: 2rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+}
 
-    padding: 2rem 15rem;
+.home_text_div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 2.5rem;
+  gap: 1rem;
+  h1 {
+    font-weight: bolder;
+    font-size: 80px;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+.home_img_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 544px;
+  height: 554px;
+  border-radius: 15px;
 
-    div {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      flex-direction: column;
-      gap: 2rem;
-      h1 {
-        font-size: 5rem;
-      }
-      p {
-        font-size: 1.2rem;
-        font-weight: bold;
-      }
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.view_pro_svg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 2;
+
+  .svg_center_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      font-weight: 700;
     }
   }
 }
@@ -41,9 +83,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   h2 {
     padding-bottom: 3rem;
     font-size: 2rem;
+    font-family: "Oswald", sans-serif;
   }
 
   .gg {
@@ -52,7 +96,7 @@
     justify-content: center;
     grid-template-columns: repeat(4, 1fr);
     flex-direction: row;
-    gap: 2rem;
+    gap: 2.5rem;
   }
   .home_box {
     a {
@@ -60,13 +104,13 @@
       color: black;
     }
     border: 1px solid black;
-    padding: 1rem;
+    padding: 0.55rem;
     border-radius: 5px;
+    width: 250px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
-    gap: 1rem;
   }
 }
 .card_img {
@@ -77,13 +121,21 @@
 
 .cardtitle_div {
   display: flex;
+  padding-left: 1rem;
+
   p {
     font-weight: bold;
   }
 }
 .price_div {
   display: flex;
+  align-items: center;
+  gap: 0.22rem;
+  padding-left: 1rem;
   p {
     font-weight: bold;
+  }
+  span {
+    color: rgb(0, 0, 0);
   }
 }

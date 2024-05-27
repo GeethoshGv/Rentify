@@ -4,6 +4,10 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 2rem;
+  background-image: url(../../assets/svg/homesvgtwo.svg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
   .single_main_div {
     display: grid;
     grid-template-columns: 1fr;

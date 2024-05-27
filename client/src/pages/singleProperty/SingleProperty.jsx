@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./singlepro.scss";
+import { bath, bed, hospital, sale, college } from "../../assets/svg/index.js";
 
 const SingleProperty = () => {
   const [property, setProperty] = useState(null);
@@ -34,15 +35,14 @@ const SingleProperty = () => {
     fetchListing();
   }, [params.listingId]);
 
-  console.log(property);
   return (
     <section className="single_section">
       {loading && <span>Loading...</span>}
       {error && <span>Something went wrong!</span>}
 
       <div className="single_main_div">
-        <div className="single_zero">
-          <div className="single_img">
+        <div className="single_one">
+          <div className="single_img_div">
             {property &&
               property.imageUrls &&
               property.imageUrls.map((url, i) => (
@@ -50,71 +50,113 @@ const SingleProperty = () => {
               ))}
           </div>
         </div>
-        <div className="single_one">
-          <div className="mini">
-            <h2>Name :</h2>
-            <h2>{property && property.name}</h2>
-          </div>
-          <div className="mini">
-            <h2>price :</h2>
-            <h2>{property && property.price}</h2>
-          </div>
-          <div className="mini">
-            <h2>description :</h2>
-
-            <h2>{property && property.description}</h2>
-          </div>
-        </div>
         <div className="single_two">
-          <div className="mini">
-            <h2>No of bedrooms :</h2>
+          <div className="single_product_detial_div">
+            <div className="detial_one">
+              <div className="mini">
+                <h2>Name :</h2>
+                <h3>{property && property.name}</h3>
+              </div>
+              <div className="mini">
+                <h2>price :</h2>
+                <h3>{property && property.price}</h3>
+              </div>
+              <div className="mini big">
+                <h2>Address :</h2>
+                <h3>{property && property.address}</h3>
+              </div>
+              <div className="mini  big">
+                <h2>Description :</h2>
+                <h3>{property && property.description}</h3>
+              </div>
+            </div>
+            <div className="detial_two">
+              <div className="two_center_div">
+                <div className="min">
+                  <h2>Bedrooms </h2>
+                  <div className="single_svg_div">
+                    <img src={bed} alt="" />
 
-            <h2>{property && property.bedrooms}</h2>
-          </div>
-          <div className="mini">
-            <h2>No of college :</h2>
+                    <h3>{property && property.bedrooms}</h3>
+                  </div>
+                </div>
+                <div className="min">
+                  <h2>College </h2>
+                  <div className="single_svg_div">
+                    <img src={college} alt="" />
 
-            <h2>{property && property.college}</h2>
-          </div>
-          <div className="mini">
-            <h2>No of bathrooms :</h2>
+                    <h3>{property && property.college}</h3>
+                  </div>
+                </div>
+                <div className="min">
+                  <h2>Bathrooms </h2>
+                  <div className="single_svg_div">
+                    <img src={bath} alt="" />
 
-            <h2>{property && property.bathrooms}</h2>
-          </div>
-          <div className="mini">
-            <h2>No of hospitals :</h2>
+                    <h3>{property && property.bathrooms}</h3>
+                  </div>
+                </div>
 
-            <h2>{property && property.hospitals}</h2>
-          </div>
+                <div className="min">
+                  <h2>Hospitals </h2>
+                  <div className="single_svg_div">
+                    <img src={hospital} alt="" />
 
-          <div className="mini">
-            <h2>Address :</h2>
+                    <h3>{property && property.hospitals}</h3>
+                  </div>
+                </div>
+                <div className="min">
+                  <h2>Type </h2>
+                  <div className="single_svg_div">
+                    <img src={sale} alt="" />
 
-            <h2>{property && property.address}</h2>
-          </div>
-          <div className="mini">
-            <h2>Type :</h2>
-
-            <h2>{property && property.type === "rent" ? "rent" : " sale"}</h2>
-          </div>
-        </div>
-
-        {currentUser && (
-          <div>
-            <button className="im" onClick={() => setContact(!contact)}>
-              <h3>I'm interested</h3>
-            </button>
-          </div>
-        )}
-        {contact && (
-          <div>
-            {" "}
-            <div className="mini">
-              <h2>contact :</h2>
-              <h2>{property && property.contactNumber}</h2>
+                    <h3>
+                      {property && property.type === "rent" ? "rent" : " sale"}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="detial_three">
+              <div className="three_center_div">
+                <div className="im_iintrested_div">
+                  <div className="in_button">
+                    {currentUser && (
+                      <div>
+                        <button
+                          className="im"
+                          onClick={() => setContact(!contact)}
+                        >
+                          <h3>I'm interested</h3>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  <div className="in_contact">
+                    {contact && (
+                      <div className="hidden_seller_det">
+                        {" "}
+                        <div className="mini">
+                          <h2>Seller email :</h2>
+                          <h3>{property && property.sellerEmail}</h3>
+                        </div>
+                        <div className="mini">
+                          <h2>Seller contact :</h2>
+                          <h3>{property && property.contactNumber}</h3>
+                        </div>
+                        <Link
+                          to={`mailto:${property.sellerEmail}?subject=Regarding ${property.name}&body= for${property.type}`}
+                        >
+                          <button className="mail_button">send mail</button>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

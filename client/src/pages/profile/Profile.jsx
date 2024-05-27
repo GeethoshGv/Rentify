@@ -285,36 +285,35 @@ const Profile = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="div_userProperty">
-          {userProperty &&
-            userProperty.length > 0 &&
-            userProperty.map((listing) => {
-              return (
-                <>
-                  <div className="showuserProperty">
-                    <div>
-                      <Link to={`/singleProperty/${listing._id}`}>
-                        <img src={listing.imageUrls[0]} alt="listing cover" />
-                      </Link>
-                      <Link to={`/singleProperty/${listing._id}`}>
+          <div className="div_userProperty">
+            {userProperty &&
+              userProperty.length > 0 &&
+              userProperty.map((listing) => {
+                return (
+                  <>
+                    <div className="showuserProperty">
+                      <div className="showuserProperty_one">
+                        <Link to={`/singleProperty/${listing._id}`}>
+                          <img src={listing.imageUrls[0]} alt="listing cover" />
+                        </Link>
                         <p>{listing.name}</p>
-                      </Link>
-                    </div>
-                    <div>
-                      <button onClick={() => handlePropertyDelete(listing._id)}>
-                        Delete
-                      </button>
+                      </div>
+                      <div className="showuserProperty_one_button">
+                        <button
+                          onClick={() => handlePropertyDelete(listing._id)}
+                        >
+                          Delete
+                        </button>
 
-                      <Link to={`/updateproperty/${listing._id}`}>
-                        <button>Edit</button>
-                      </Link>
+                        <Link to={`/updateproperty/${listing._id}`}>
+                          <button className="bb">Edit</button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </>
-              );
-            })}
+                  </>
+                );
+              })}
+          </div>
         </div>
       </div>
     </section>
